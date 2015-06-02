@@ -1,3 +1,4 @@
+package mapa.excepciones;
 
 @SuppressWarnings("serial")
 

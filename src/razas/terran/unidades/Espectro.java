@@ -6,10 +6,8 @@ import razas.interfaces.Unidad;
 public class Espectro extends Terran implements Unidad {
 	
 	public Espectro() {
-		
 		super();
 		this.vida = 120;
-		
 	}
 	
 	@Override

@@ -1,3 +1,8 @@
+package razas.terran.construcciones;
+
+import mapa.excepciones.MineralAgotado;
+import mapa.recursos.Mineral;
+import razas.interfaces.Recolectable;
 
 public class CentroMineral implements Recolectable {
 	

@@ -1,3 +1,6 @@
+package mapa.recursos;
+
+import mapa.Recursos;
 
 public class Mineral extends Recursos {
 	

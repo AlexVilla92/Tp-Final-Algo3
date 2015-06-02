@@ -1,6 +1,12 @@
+package construccionesTester;
+
 import static org.junit.Assert.*;
+import mapa.excepciones.MineralAgotado;
 
 import org.junit.Test;
+
+import razas.interfaces.Recolectable;
+import razas.terran.construcciones.CentroMineral;
 
 public class CentroMineralTest {
 
@@ -31,7 +37,7 @@ public class CentroMineralTest {
 	}
 	
 	@Test
-	public void testRecolectarDeUnNodoAgotado() throws MineralAgotado{
+	public void testRecolectarDeUnNodoAgotado() throws MineralAgotado {
 		
 		/* por ej: si a un nodo le queda 8 de mineral, se deberia 
 		 * recolecta de otra forma

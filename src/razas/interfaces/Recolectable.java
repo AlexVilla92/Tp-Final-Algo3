@@ -1,3 +1,6 @@
+package razas.interfaces;
+
+import mapa.excepciones.MineralAgotado;
 
 public interface Recolectable {
 	
