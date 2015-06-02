@@ -5,5 +5,6 @@
 +  email:  
 +     recipients:
 +       -  Ale.92xx@yahoo.com
+        -  me@dancodes.com.ar
 +     on_failure: always
 +     on_success: always
