@@ -7,16 +7,17 @@ import razas.protoss.excepciones.*;
 
 public abstract class Protoss implements Atacable {
 
-	protected int vida, escudo, escudoPerfecto;
-	protected boolean esVolador;
+	protected int vida, escudo;
+	
+	protected abstract int escudoPerfecto();
+	public abstract boolean esVolador();
 	
 	private boolean escudoActivo() {
 		return (this.escudo > 0);
-		
 	}
 	
 	private boolean escudoDaniado() {
-		return (this.escudo < this.escudoPerfecto);
+		return (this.escudo < this.escudoPerfecto());
 	}
 	
 	private void daniar(int danio) throws YaFueDestruido {
@@ -44,8 +45,6 @@ public abstract class Protoss implements Atacable {
 		return !(this.vida > 0);
 	}
 	
-	public boolean esVolador() { return this.esVolador; }
-	
 	@Override
 	public void atacadoPor(Unidad atacante) throws YaFueDestruido {
 		
@@ -63,11 +62,11 @@ public abstract class Protoss implements Atacable {
 		
 			try {
 			
-				if (this.escudo > this.escudoPerfecto) throw new EscudoSobrepasaValorMaximo();
+				if (this.escudo > this.escudoPerfecto()) throw new EscudoSobrepasaValorMaximo();
 		
 			} catch (EscudoSobrepasaValorMaximo esvm) {
 			
-				this.escudo = this.escudoPerfecto;
+				this.escudo = this.escudoPerfecto();
 			
 			}
 			

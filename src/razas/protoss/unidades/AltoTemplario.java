@@ -11,11 +11,15 @@ public class AltoTemplario extends Protoss implements Unidad {
 		
 		super();
 		this.vida = 40;
-		this.esVolador = false;
 		this.escudo = 40;
-		this.escudoPerfecto = 40;
 		
 	}
+	
+	@Override
+	public boolean esVolador() { return false; }
+	
+	@Override
+	protected int escudoPerfecto() { return 40; }
 	
 	@Override
 	public int getTransporte() { return 2; }

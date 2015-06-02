@@ -9,9 +9,11 @@ public class Espectro extends Terran implements Unidad {
 		
 		super();
 		this.vida = 120;
-		this.esVolador = true;
 		
 	}
+	
+	@Override
+	public boolean esVolador() { return true; }
 	
 	@Override
 	public int getTransporte() { return 0; }

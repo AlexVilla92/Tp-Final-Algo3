@@ -9,11 +9,15 @@ public class Dragon extends Protoss implements Unidad {
 		
 		super();
 		this.vida = 100;
-		this.esVolador = false;
 		this.escudo = 80;
-		this.escudoPerfecto = 80;
 		
 	}
+	
+	@Override
+	public boolean esVolador() { return false; }
+	
+	@Override
+	protected int escudoPerfecto() { return 80; }
 	
 	@Override
 	public int getTransporte() { return 4; }

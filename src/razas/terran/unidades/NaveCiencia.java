@@ -11,9 +11,11 @@ public class NaveCiencia extends Terran implements Unidad {
 		
 		super();
 		this.vida = 200;
-		this.esVolador = true;
 		
 	}
+	
+	@Override
+	public boolean esVolador() { return true; }
 	
 	@Override
 	public int getTransporte() { return 0; }

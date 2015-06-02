@@ -9,11 +9,15 @@ public class Zealot extends Protoss implements Unidad {
 		
 		super();
 		this.vida = 100;
-		this.esVolador = false;
 		this.escudo = 60;
-		this.escudoPerfecto = 60;
 		
 	}
+	
+	@Override
+	public boolean esVolador() { return false; }
+	
+	@Override
+	protected int escudoPerfecto() { return 60; }
 	
 	@Override
 	public int getTransporte() { return 2; }

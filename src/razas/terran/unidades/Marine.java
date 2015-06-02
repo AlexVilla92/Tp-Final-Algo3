@@ -9,9 +9,11 @@ public class Marine extends Terran implements Unidad {
 		
 		super();
 		this.vida = 40;
-		this.esVolador = false;
 		
 	}
+	
+	@Override
+	public boolean esVolador() { return false; }
 	
 	@Override
 	public int getTransporte() { return 1; }

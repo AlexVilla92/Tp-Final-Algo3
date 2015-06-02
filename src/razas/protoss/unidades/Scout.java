@@ -9,11 +9,15 @@ public class Scout extends Protoss implements Unidad {
 		
 		super();
 		this.vida = 150;
-		this.esVolador = true;
 		this.escudo = 100;
-		this.escudoPerfecto = 100;
 		
 	}
+	
+	@Override
+	public boolean esVolador() { return true; }
+	
+	@Override
+	protected int escudoPerfecto() { return 100; }
 	
 	@Override
 	public int getTransporte() { return 0; }

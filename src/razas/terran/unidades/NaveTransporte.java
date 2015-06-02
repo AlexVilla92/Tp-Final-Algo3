@@ -9,9 +9,11 @@ public class NaveTransporte extends Terran implements Unidad {
 		
 		super();
 		this.vida = 150;
-		this.esVolador = true; //No esta especificado, solo dice capacidad
-		
+
 	}
+	
+	@Override
+	public boolean esVolador() { return true; } //No esta especificado, solo dice capacidad
 	
 	public int getCapacidad() { return 8; }
 	

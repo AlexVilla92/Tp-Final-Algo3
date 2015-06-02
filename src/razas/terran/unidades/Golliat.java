@@ -9,9 +9,11 @@ public class Golliat extends Terran implements Unidad {
 		
 		super();
 		this.vida = 125;
-		this.esVolador = false;
 		
 	}
+	
+	@Override
+	public boolean esVolador() { return false; }
 	
 	@Override
 	public int getTransporte() { return 2; }

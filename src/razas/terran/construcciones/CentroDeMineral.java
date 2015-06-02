@@ -9,9 +9,11 @@ public class CentroDeMineral extends Terran implements Construccion {
 		
 		super();
 		this.vida = 500;
-		this.esVolador = false;
 		
 	}
+	
+	@Override
+	public boolean esVolador() { return false; }
 
 	@Override
 	public int costoMinerales() { return 50; }

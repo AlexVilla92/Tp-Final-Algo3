@@ -10,9 +10,14 @@ public class NexoMineral extends Protoss implements Construccion {
 		super();
 		this.vida = 250;
 		this.escudo = 250;
-		this.escudoPerfecto = 250;
 		
 	}
+	
+	@Override
+	public boolean esVolador() { return false; }
+	
+	@Override
+	protected int escudoPerfecto() { return 250; }
 	
 	@Override
 	public int costoMinerales() { return 50; }

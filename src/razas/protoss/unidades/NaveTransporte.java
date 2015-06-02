@@ -9,11 +9,15 @@ public class NaveTransporte extends Protoss implements Unidad {
 		
 		super();
 		this.vida = 80;
-		this.esVolador = true; //No esta especificado, solo dice capacidad
 		this.escudo = 60;
-		this.escudoPerfecto = 60;
-		
+
 	}
+	
+	@Override
+	public boolean esVolador() { return true; } //No esta especificado, solo dice capacidad
+	
+	@Override
+	protected int escudoPerfecto() { return 60; }
 	
 	public int getCapacidad() { return 8; } //No esta especificado, solo dice capacidad
 	

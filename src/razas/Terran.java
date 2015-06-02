@@ -7,7 +7,8 @@ import razas.interfaces.Unidad;
 public abstract class Terran implements Atacable {
 
 	protected int vida;
-	protected boolean esVolador;
+
+	public abstract boolean esVolador();
 	
 	private void daniar(int danio) throws YaFueDestruido {
 		
@@ -20,8 +21,6 @@ public abstract class Terran implements Atacable {
 	}
 	
 	public int getVida() { return this.vida; }
-	
-	public boolean esVolador() { return this.esVolador; }
 	
 	public boolean fueDestruido() {
 		return !(this.vida > 0);
