@@ -7,7 +7,9 @@ public class Zealot extends Protoss implements Unidad {
 
 	public Zealot() {
 		
+		super();
 		this.vida = 100;
+		this.esVolador = false;
 		this.escudo = 60;
 		this.escudoPerfecto = 60;
 		
