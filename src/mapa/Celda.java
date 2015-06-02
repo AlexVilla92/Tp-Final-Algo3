@@ -3,9 +3,6 @@ package mapa;
 
 import razas.interfaces.Unidad;
 
-import java.util.LinkedList;
-import java.util.Stack;
-
 public class Celda {
 	
 	private Unidad unidad;
@@ -26,6 +23,10 @@ public class Celda {
 	
 	public boolean estaVacia() {
 		return (this.unidad == null);
+	}
+	
+	public boolean esTranspasable(Unidad unidad) {
+		return this.base.esTranspasable(unidad);
 	}
 	
 	
