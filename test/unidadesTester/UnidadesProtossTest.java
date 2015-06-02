@@ -29,7 +29,7 @@ public class UnidadesProtossTest {
 			
 		}
 		
-		assertFalse(marine.aunVive());
+		assertTrue(marine.fueDestruido());
 		
 	}
 	

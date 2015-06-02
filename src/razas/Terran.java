@@ -6,13 +6,13 @@ import razas.interfaces.Unidad;
 
 public abstract class Terran extends Especie implements Atacable {
 
-	public boolean aunVive() {
-		return (this.vida > 0);
+	public boolean fueDestruido() {
+		return !(this.vida > 0);
 	}
 	
 	private void daniar(int danio) throws EspecieYaEstaMuerta {
 		
-		if (this.aunVive()) {
+		if (!this.fueDestruido()) {
 			this.vida -= danio;
 		} else { 
 			throw new EspecieYaEstaMuerta();

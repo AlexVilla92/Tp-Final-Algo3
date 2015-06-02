@@ -9,8 +9,8 @@ public abstract class Protoss extends Especie implements Atacable {
 
 	protected int escudo, escudoPerfecto;
 
-	public boolean aunVive() {
-		return (this.vida > 0);
+	public boolean fueDestruido() {
+		return !(this.vida > 0);
 	}
 	
 	private boolean escudoActivo() {
@@ -28,7 +28,7 @@ public abstract class Protoss extends Especie implements Atacable {
 			this.escudo -= danio;
 		} else {
 			try {
-				if (this.aunVive()) {
+				if (!this.fueDestruido()) {
 					this.vida -= danio;
 					if (vida < 0) this.vida = 0;
 				} else { 
