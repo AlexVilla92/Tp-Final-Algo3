@@ -1,0 +1,9 @@
++language: java
++jdk:
++  - oraclejdk7
++notifications:
++  email:  
++     recipients:
++       -  Ale.92xx@yahoo.com
++     on_failure: always
++     on_success: always
