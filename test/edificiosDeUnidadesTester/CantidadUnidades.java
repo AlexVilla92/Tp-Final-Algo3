@@ -20,4 +20,10 @@ public class CantidadUnidades {
 		return (this.totalUnidades);
 	}
 
+	public void acumularUnidades(int unidadesNuevas) {
+		
+		this.totalUnidades = this.totalUnidades + unidadesNuevas;
+		
+	}
+
 }

@@ -6,4 +6,6 @@ public interface Creable {
 
 	public Object unidadesCreadas();
 
+	public void crearUnidades(int unidades);
+
 }
