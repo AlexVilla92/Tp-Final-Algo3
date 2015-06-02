@@ -1,10 +1,27 @@
 package razas;
 
+import razas.excepciones.YaFueDestruido;
 import razas.protoss.excepciones.*;
 
 public abstract class Protoss extends Raza {
 
 	protected int escudo;
+	
+	@Override
+	protected void daniar(int danio) throws YaFueDestruido {
+		
+		if (this.escudoActivo()) {
+			if (danio > this.escudo) {
+				danio = danio - this.escudo;
+				this.escudo = 0;
+			} else {
+				this.escudo -= danio;
+				danio = 0;
+			}
+		}
+		
+		this.removerVida(danio);		
+	}
 	
 	protected abstract int escudoPerfecto();
 	

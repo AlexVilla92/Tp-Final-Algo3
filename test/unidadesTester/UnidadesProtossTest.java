@@ -43,7 +43,9 @@ public class UnidadesProtossTest {
 		
 		try {
 			//Por cada vez que ataca el marine saca 6 de vida, 6 x 10 = 60, que es el valor del escudo del marine.
-			for (int i = 0; i < 10; i++)	zealot.atacadoPor(marine);
+			for (int i = 0; i < 10; i++) {	
+				zealot.atacadoPor(marine);
+			}
 			
 		} catch (YaFueDestruido ex) {
 			

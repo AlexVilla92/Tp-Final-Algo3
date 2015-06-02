@@ -4,7 +4,7 @@ import razas.excepciones.YaFueDestruido;
 import razas.interfaces.Atacable;
 import razas.interfaces.Unidad;
 
-public class Raza implements Atacable {
+public abstract class Raza implements Atacable {
 
 	protected int vida;
 
@@ -18,14 +18,17 @@ public class Raza implements Atacable {
 		return !(this.vida > 0);
 	}
 	
+	protected void removerVida(int danio) throws YaFueDestruido {
+       if (!this.fueDestruido()) {
+               this.vida -= danio;
+               if (this.vida < 0) this.vida = 0;
+       } else { 
+               throw new YaFueDestruido();
+       }
+   }
+	
 	protected void daniar(int danio) throws YaFueDestruido {
-		
-		if (!this.fueDestruido()) {
-			this.vida -= danio;
-		} else { 
-			throw new YaFueDestruido();
-		}
-		
+		this.removerVida(danio);	
 	}
 
 	public void atacadoPor(Unidad atacante) throws YaFueDestruido {
@@ -33,12 +36,8 @@ public class Raza implements Atacable {
 		//No se tiene en cuenta si el atacante es un protoss o un terran.
 		if (this.esVolador()) { this.daniar(atacante.getDanioAire()); }
 		else { this.daniar(atacante.getDanioTierra()); }
-		
 	}
-
-	public boolean esVolador() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
+	public abstract boolean esVolador();
 
 }
