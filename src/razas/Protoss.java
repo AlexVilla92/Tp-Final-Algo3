@@ -10,7 +10,6 @@ public abstract class Protoss implements Atacable {
 	protected int vida, escudo;
 	
 	protected abstract int escudoPerfecto();
-	public abstract boolean esVolador();
 	
 	private boolean escudoActivo() {
 		return (this.escudo > 0);
