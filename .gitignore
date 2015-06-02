@@ -17,3 +17,6 @@ hs_err_pid*
 
 #test results
 TEST-*
+
+build/
+pmd_report.html
