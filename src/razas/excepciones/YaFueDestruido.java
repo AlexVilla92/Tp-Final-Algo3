@@ -1,6 +1,6 @@
 package razas.excepciones;
 
-public class EspecieYaEstaMuerta extends Exception {
+public class YaFueDestruido extends Exception {
 
 	/**
 	 * 

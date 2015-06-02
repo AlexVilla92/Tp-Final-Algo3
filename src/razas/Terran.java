@@ -1,26 +1,34 @@
 package razas;
 
-import razas.excepciones.EspecieYaEstaMuerta;
+import razas.excepciones.YaFueDestruido;
 import razas.interfaces.Atacable;
 import razas.interfaces.Unidad;
 
-public abstract class Terran extends Especie implements Atacable {
+public abstract class Terran implements Atacable {
 
-	public boolean fueDestruido() {
-		return !(this.vida > 0);
-	}
+	protected int vida;
+	protected boolean esVolador;
 	
-	private void daniar(int danio) throws EspecieYaEstaMuerta {
+	private void daniar(int danio) throws YaFueDestruido {
 		
 		if (!this.fueDestruido()) {
 			this.vida -= danio;
 		} else { 
-			throw new EspecieYaEstaMuerta();
+			throw new YaFueDestruido();
 		}
 		
 	}
 	
-	public void atacadoPor(Unidad atacante) throws EspecieYaEstaMuerta {
+	public int getVida() { return this.vida; }
+	
+	public boolean esVolador() { return this.esVolador; }
+	
+	public boolean fueDestruido() {
+		return !(this.vida > 0);
+	}
+	
+	@Override
+	public void atacadoPor(Unidad atacante) throws YaFueDestruido {
 		
 		//No se tiene en cuenta si el atacante es un protoss o un terran.
 		if (this.esVolador()) { this.daniar(atacante.getDanioAire()); }

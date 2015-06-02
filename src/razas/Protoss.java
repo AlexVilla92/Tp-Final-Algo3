@@ -1,17 +1,14 @@
 package razas;
 
-import razas.excepciones.EspecieYaEstaMuerta;
+import razas.excepciones.YaFueDestruido;
 import razas.interfaces.Atacable;
 import razas.interfaces.Unidad;
 import razas.protoss.excepciones.*;
 
-public abstract class Protoss extends Especie implements Atacable {
+public abstract class Protoss implements Atacable {
 
-	protected int escudo, escudoPerfecto;
-
-	public boolean fueDestruido() {
-		return !(this.vida > 0);
-	}
+	protected int vida, escudo, escudoPerfecto;
+	protected boolean esVolador;
 	
 	private boolean escudoActivo() {
 		return (this.escudo > 0);
@@ -22,7 +19,7 @@ public abstract class Protoss extends Especie implements Atacable {
 		return (this.escudo < this.escudoPerfecto);
 	}
 	
-	private void daniar(int danio) throws EspecieYaEstaMuerta {
+	private void daniar(int danio) throws YaFueDestruido {
 		
 		if (this.escudoActivo()) {
 			this.escudo -= danio;
@@ -32,14 +29,25 @@ public abstract class Protoss extends Especie implements Atacable {
 					this.vida -= danio;
 					if (vida < 0) this.vida = 0;
 				} else { 
-					throw new EspecieYaEstaMuerta();
+					throw new YaFueDestruido();
 				}
 			} finally {}
 		}
 		
 	}
 	
-	public void atacadoPor(Unidad atacante) throws EspecieYaEstaMuerta {
+	public int getVida() { return this.vida; }
+	
+	public int getEscudo() { return this.escudo; }
+	
+	public boolean fueDestruido() {
+		return !(this.vida > 0);
+	}
+	
+	public boolean esVolador() { return this.esVolador; }
+	
+	@Override
+	public void atacadoPor(Unidad atacante) throws YaFueDestruido {
 		
 		//No se tiene en cuenta si el atacante es un protoss o un terran.
 		if (this.esVolador()) { this.daniar(atacante.getDanioAire()); }

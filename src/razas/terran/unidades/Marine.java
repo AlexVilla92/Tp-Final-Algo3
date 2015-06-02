@@ -1,21 +1,46 @@
 package razas.terran.unidades;
 
-public class Marine extends UnidadTerran {
+import razas.Terran;
+import razas.interfaces.Unidad;
 
+public class Marine extends Terran implements Unidad {
+	
 	public Marine() {
 		
-		this.transporte = 1;
-		this.vision = 7;
-		this.costoMinerales = 50;
-		this.costoGasVespeno = 0;
-		this.tiempoDeConstruccion = 3;
-		this.danioAire = 6;
-		this.danioTierra = 6;
-		this.suministro = 1;
-		this.rangoAire = 4;
-		this.rangoTierra = 4;
+		super();
 		this.vida = 40;
+		this.esVolador = false;
 		
 	}
+	
+	@Override
+	public int getTransporte() { return 1; }
+	
+	@Override
+	public int getVision() { return 7; }
+	
+	@Override
+	public int getCostoMinerales() { return 50; }
+	
+	@Override
+	public int getCostoGasVespeno() { return 0; }
+	
+	@Override
+	public int getTiempoDeConstruccion() { return 3; }
+	
+	@Override
+	public int getDanioAire() { return 6; }
+	
+	@Override
+	public int getDanioTierra() { return 6; }
+	
+	@Override
+	public int getSuministro() { return 1; }
+	
+	@Override
+	public int getRangoAire() { return 4; }
+	
+	@Override
+	public int getRangoTierra() { return 4; }
 	
 }

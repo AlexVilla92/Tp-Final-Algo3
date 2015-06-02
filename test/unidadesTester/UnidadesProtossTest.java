@@ -3,7 +3,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import razas.excepciones.EspecieYaEstaMuerta;
+import razas.excepciones.YaFueDestruido;
 import razas.protoss.excepciones.EscudoNoPuedeRegenerarse;
 import razas.protoss.unidades.Zealot;
 import razas.terran.unidades.Marine;
@@ -23,7 +23,7 @@ public class UnidadesProtossTest {
 			//Por cada vez que ataca el zealot saca 8 de vida, 8 x 5 = 40, que es la vida del marine.
 			for (int i = 0; i < 5; i++)	marine.atacadoPor(zealot);
 			
-		} catch (EspecieYaEstaMuerta ex) {
+		} catch (YaFueDestruido ex) {
 			
 			assertTrue(false);
 			
@@ -45,7 +45,7 @@ public class UnidadesProtossTest {
 			//Por cada vez que ataca el marine saca 6 de vida, 6 x 10 = 60, que es el valor del escudo del marine.
 			for (int i = 0; i < 10; i++)	zealot.atacadoPor(marine);
 			
-		} catch (EspecieYaEstaMuerta ex) {
+		} catch (YaFueDestruido ex) {
 			
 			assertTrue(false);
 			
@@ -66,7 +66,7 @@ public class UnidadesProtossTest {
 			//Por cada vez que ataca el marine saca 6 de vida, 6 x 11 = 66, el marine deberia perder 6 de vida, ya que su escudo es de 60.
 			for (int i = 0; i < 11; i++)	zealot.atacadoPor(marine);
 			
-		} catch (EspecieYaEstaMuerta ex) {
+		} catch (YaFueDestruido ex) {
 			
 			assertTrue(false);
 			
@@ -84,7 +84,7 @@ public class UnidadesProtossTest {
 		try {
 			zealot.atacadoPor(marine);
 			
-		} catch (EspecieYaEstaMuerta ex) {
+		} catch (YaFueDestruido ex) {
 			
 			assertTrue(false);
 			
