@@ -1,6 +1,7 @@
 package mapa;
 
 
+import mapa.excepciones.CeldaNoVacia;
 import razas.interfaces.Unidad;
 
 public class Celda {
@@ -13,8 +14,13 @@ public class Celda {
 		this.unidad = null;
 	}
 
-	public void agregarUnidad(Unidad unidad) {
-		this.unidad = unidad;
+	public void agregarUnidad(Unidad unidad) throws CeldaNoVacia {
+		if (this.estaVacia()) {
+			this.unidad = unidad;
+		}
+		else {
+			throw new CeldaNoVacia();
+		}
 	}
 	
 	public void removerUnidad() {
