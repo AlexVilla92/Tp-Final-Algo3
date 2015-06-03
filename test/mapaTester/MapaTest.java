@@ -87,5 +87,23 @@ public class MapaTest {
 		map.removerUnidad(2, 3);
 		assertFalse(map.celdaOcupada(2, 3));
 	}
+	
+	@Test
+	public void testMapaMueveUnaUnidadDeSuPosicionOriginalAOtra() throws CeldaNoVacia {
+		Mapa map = new Mapa(30,30);
+		
+		Zealot zealot = new Zealot();
+		
+		map.agregarUnidad(2, 3, zealot);
+		
+		assertEquals(zealot, map.obtenerUnidad(2, 3));
+		assertTrue(map.celdaOcupada(2, 3));
+		
+		map.moverUnidad(2, 3, 2, 4);
+		
+		assertFalse(map.celdaOcupada(2, 3));
+		
+		assertEquals(zealot, map.obtenerUnidad(2, 4));
+	}
 
 }

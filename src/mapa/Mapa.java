@@ -74,6 +74,25 @@ public class Mapa {
 		this.cantidadDeUnidades++;
 	}
 
+	public void moverUnidad(int x1, int y1, int x2, int y2) {
+		Coordenada c1 = new Coordenada(x1, y1);
+		Coordenada c2 = new Coordenada(x2, y2);
+		
+		this.moverUnidad(c1, c2);
+	}
+	
+	public void moverUnidad(Coordenada c1, Coordenada c2) {
+		Unidad original = this.obtenerCelda(c1).getUnidad();
+		
+		this.removerUnidad(c1);
+		
+		try {
+			this.agregarUnidad(c2, original);
+		} catch (CeldaNoVacia e) {
+			e.printStackTrace();
+		}
+	}
+
 	public void removerUnidad(int x, int y) {
 		Coordenada c = new Coordenada(x, y);
 		
