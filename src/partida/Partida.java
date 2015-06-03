@@ -1,12 +1,17 @@
 package partida;
 
+import java.util.LinkedList;
+
 import jugador.Jugador;
 import listas.ListaCircular;
+import mapa.Mapa;
 
 public class Partida {
 	
 	private ListaCircular<Jugador> jugadores;
 	private Jugador jugadorConTurno;
+	private LinkedList<Jugador> jugadoresActivos;
+	private Mapa map;
 	
 	public Partida() {
 		this.jugadores = new ListaCircular<Jugador>();
