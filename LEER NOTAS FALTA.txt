@@ -1,0 +1,25 @@
+Algunas notas, mañana lo borro:
+
+- Hay una interfaz que se llama "Constructor" que utilizan los edificios de las clases terran/protoss para crear unidades (o al menos deberían hacerlo,
+ya que por ahora cree métodos "crearZealots, crearMarines, etc..." que no me parecen muy buena práctica, pero como estoy medio cansado lo hice así, habría que
+modificarlo
+
+- Estaba pensando que algunos getters de las clases quizas deberían ser "static", osea metodos de clase, como por ejemplo "tiempoDeConstruccion" o "costoMinerales"
+ya que para conocer estos datos es necesario crear una instancia de la clase, pero no se digan que les parece
+
+- Una barraca, por ejemplo, puede crear marines pero no verifica su "activación", es decir estos recien pueden usarse 8 turnos despues, creo que es el tiempo de construccion",
+lo que podríamos hacer es, o implementarlo ahí o cuando se agrega al mapa que haya una entidad activadora de estas entidades (podríamos usar el patron de observador,
+que tiene una lista de objetos observados y cuando hay algún cambio en estos modifica los observadores).
+
+- Debería validarse que la refinería, o el nexo mineral se construyen únicamente en una zona con recursos, de vuelta surgue la necesidad de una entidad verificadora de este
+tipo de cosas, pero es una idea.
+
+- Los edificios que contienen recursos pueden almacenar los mismo, pero aún no cree un método para retirar los mismo, supongamos que se quiere crear un zealot, se deberían
+retirar entonces cierta cantidad de minerales del nexo mineral. Faltaría implementar el método
+
+- Falta implementar los métodos, o lo que sea que implementemos, para las unidades mágicas, como nave de ciencia o alto templario.
+
+- Verificacion de edificios con requisitos para su construcción, nuevamente la entidad verificadora o activador o lo que sea.
+
+- El método de ataque de una unidad a otra o a una construcción, no diferencia entre aliados o enemigos.
+Es decir pueden atacarse aliados, creo que lo mejor sería que no pase eso, así que habría que modificar el método o validarlo de alguna manera
