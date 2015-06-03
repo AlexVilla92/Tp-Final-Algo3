@@ -3,9 +3,9 @@ package razas.protoss.unidades;
 import razas.Protoss;
 import razas.interfaces.Unidad;
 
-public class NaveTransporte extends Protoss implements Unidad {
+public class NaveDeTransporte extends Protoss implements Unidad {
 
-	public NaveTransporte() {
+	public NaveDeTransporte() {
 		
 		super();
 		this.vida = 80;
