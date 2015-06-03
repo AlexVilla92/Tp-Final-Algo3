@@ -1,4 +1,4 @@
-package unidadesTester;
+package unidadesTests;
 import static org.junit.Assert.*;
 
 import org.junit.Test;

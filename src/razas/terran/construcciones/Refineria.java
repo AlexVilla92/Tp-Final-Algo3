@@ -6,34 +6,35 @@ import razas.Terran;
 import razas.interfaces.Construccion;
 import razas.interfaces.Recolector;
 
-public class CentroDeMineral extends Terran implements Construccion, Recolector {
+public class Refineria extends Terran implements Construccion, Recolector {
 	
-	private int mineralesRecolectados;
+	private int gasVespenoRecolectado;
 	
-	public CentroDeMineral() {
+	public Refineria() {
+		
 		super();
-		this.vida = 500;
-		this.mineralesRecolectados = 0;
+		this.vida = 750;
+		this.gasVespenoRecolectado = 0;
 	}
 	
 	@Override
 	public boolean esVolador() { return false; }
 
 	@Override
-	public int getCostoMinerales() { return 50; }
+	public int getCostoMinerales() { return 100; }
 
 	@Override
 	public int getCostoGasVespeno() { return 0; }
 
 	@Override
-	public int getTiempoDeConstruccion() { return 4; }
+	public int getTiempoDeConstruccion() { return 6; }
 	
 	@Override
-	public int totalRecolectado() { return this.mineralesRecolectados; }
+	public int totalRecolectado() { return this.gasVespenoRecolectado; }
 	
 	@Override
 	public void recolectar(Recurso nodo) throws RecursoAgotado {
-		this.mineralesRecolectados += nodo.extraer();
+		this.gasVespenoRecolectado += nodo.extraer();
 	}
 	
 }

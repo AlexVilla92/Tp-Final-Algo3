@@ -2,7 +2,6 @@ package razas.interfaces;
 
 
 public interface Unidad {
-	
 
 	public boolean esVolador();
 	public int getTransporte();

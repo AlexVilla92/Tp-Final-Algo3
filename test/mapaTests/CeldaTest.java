@@ -1,4 +1,4 @@
-package mapaTester;
+package mapaTests;
 
 import static org.junit.Assert.*;
 
@@ -31,7 +31,7 @@ public class CeldaTest {
 		try {
 			celda.agregarUnidad(zealot);
 			celda.agregarUnidad(zealot);
-			fail("No corrió la excepción");
+			fail("No corria la excepcion");
 		} catch (CeldaNoVacia ex) {
 			assertTrue(true);
 		}

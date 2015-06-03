@@ -20,12 +20,12 @@ public class NexoMineral extends Protoss implements Construccion {
 	protected int escudoPerfecto() { return 250; }
 	
 	@Override
-	public int costoMinerales() { return 50; }
+	public int getCostoMinerales() { return 50; }
 
 	@Override
-	public int costoGasVespeno() { return 0; }
+	public int getCostoGasVespeno() { return 0; }
 
 	@Override
-	public int tiempoDeConstruccion() { return 4; }
+	public int getTiempoDeConstruccion() { return 4; }
 
 }

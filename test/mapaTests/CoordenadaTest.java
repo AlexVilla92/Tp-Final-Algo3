@@ -1,4 +1,4 @@
-package mapaTester;
+package mapaTests;
 
 import static org.junit.Assert.*;
 import mapa.Coordenada;

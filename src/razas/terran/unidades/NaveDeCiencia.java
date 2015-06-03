@@ -3,11 +3,11 @@ package razas.terran.unidades;
 import razas.Terran;
 import razas.interfaces.Unidad;
 
-public class NaveCiencia extends Terran implements Unidad {
+public class NaveDeCiencia extends Terran implements Unidad {
 	
 	//Esta es una unidad magica, falta implementar metodos de magia
 	
-	public NaveCiencia() {
+	public NaveDeCiencia() {
 		
 		super();
 		this.vida = 200;

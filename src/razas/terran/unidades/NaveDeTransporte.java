@@ -3,9 +3,9 @@ package razas.terran.unidades;
 import razas.Terran;
 import razas.interfaces.Unidad;
 
-public class NaveTransporte extends Terran implements Unidad {
+public class NaveDeTransporte extends Terran implements Unidad {
 	
-	public NaveTransporte() {
+	public NaveDeTransporte() {
 		
 		super();
 		this.vida = 150;

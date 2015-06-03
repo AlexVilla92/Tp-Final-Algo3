@@ -1,6 +1,5 @@
 package mapa;
 
-
 import mapa.excepciones.CeldaNoVacia;
 import razas.interfaces.Unidad;
 
