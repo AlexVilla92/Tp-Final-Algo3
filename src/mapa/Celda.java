@@ -17,10 +17,13 @@ public class Celda {
 	public void agregarUnidad(Unidad unidad) throws CeldaNoVacia {
 		if (this.estaVacia()) {
 			this.unidad = unidad;
-		}
-		else {
+		} else {
 			throw new CeldaNoVacia();
 		}
+	}
+	
+	public Unidad getUnidad() {
+		return this.unidad;
 	}
 	
 	public void removerUnidad() {

@@ -22,6 +22,7 @@ public class CeldaTest {
 		assertFalse(celda.estaVacia());
 	}
 	
+	@Test
 	public void testCeldaNoPuedeContenerMasDeUnElemento() throws CeldaNoVacia {
 		MaterialTierra tierra = new MaterialTierra();
 		Celda celda = new Celda(tierra);
@@ -30,11 +31,10 @@ public class CeldaTest {
 		try {
 			celda.agregarUnidad(zealot);
 			celda.agregarUnidad(zealot);
+			fail("No corrió la excepción");
 		} catch (CeldaNoVacia ex) {
 			assertTrue(true);
 		}
-		
-		fail("No corrió la excepción");
 	}
 
 }
