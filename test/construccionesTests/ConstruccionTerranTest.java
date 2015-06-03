@@ -52,8 +52,7 @@ public class ConstruccionTerranTest {
 				centroDeMineral.recolectar(nodoDeMinerales);
 			} catch (RecursoAgotado ra) { 
 				assertTrue(false);
-			}
-			
+			}			
 		}
 	
 		assertTrue(nodoDeMinerales.getCantidad() == 970);

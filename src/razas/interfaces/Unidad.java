@@ -6,8 +6,6 @@ public interface Unidad {
 	public boolean esVolador();
 	public int getTransporte();
 	public int getVision();
-	public int getCostoMinerales();
-	public int getCostoGasVespeno();
 	public int getTiempoDeConstruccion();
 	public int getDanioTierra();
 	public int getDanioAire();

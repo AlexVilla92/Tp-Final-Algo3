@@ -36,7 +36,15 @@ public class CentroDeMineral extends Terran implements Construccion, Recolector 
 		int extraido = nodo.extraer();
 		this.mineralesRecolectados += extraido;
 		
+		if(this.tieneJugador()) {
+			this.notificarMineralesObtenidos(extraido);
+		}
+		
 		return extraido;
+	}
+	
+	private void notificarMineralesObtenidos(int cantidad) {
+		this.getJugador().obtenerMinerales(cantidad);		
 	}
 	
 }

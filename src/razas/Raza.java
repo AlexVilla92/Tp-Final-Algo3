@@ -21,6 +21,10 @@ public abstract class Raza implements Atacable {
 	public Jugador getJugador() {
 		return this.deJugador;
 	}
+	
+	public boolean tieneJugador() {
+		return this.deJugador != null;
+	}
 
 	public int getVida() { return this.vida; }
 
@@ -49,5 +53,8 @@ public abstract class Raza implements Atacable {
 	}
 	
 	public abstract boolean esVolador();
+
+	public abstract int getCostoMinerales();
+	public abstract int getCostoGasVespeno();
 
 }

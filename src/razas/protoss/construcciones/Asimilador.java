@@ -41,7 +41,13 @@ public class Asimilador extends Protoss implements Construccion, Recolector {
 		int extraido = nodo.extraer();
 		this.gasVespenoRecolectado += extraido;
 		
+		this.notificarGasObtenido(extraido);
+		
 		return extraido;
+	}
+	
+	private void notificarGasObtenido(int cantidad) {
+		this.getJugador().obtenerGasVespeno(cantidad);		
 	}
 	
 }

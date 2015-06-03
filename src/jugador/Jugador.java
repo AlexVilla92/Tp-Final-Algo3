@@ -30,7 +30,6 @@ public abstract class Jugador {
 		this.cantidadMinerales -= cantidad;
 	}
 	
-
 	public void obtenerGasVespeno(int cantidad) {
 		this.cantidadGasVespeno += cantidad;
 	}

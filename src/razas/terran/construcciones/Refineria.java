@@ -37,7 +37,15 @@ public class Refineria extends Terran implements Construccion, Recolector {
 		int extraido = nodo.extraer();
 		this.gasVespenoRecolectado += extraido;
 		
+		if(this.tieneJugador()) {
+			this.notificarGasObtenido(extraido);
+		}
+		
 		return extraido;
+	}
+	
+	private void notificarGasObtenido(int cantidad) {
+		this.getJugador().obtenerGasVespeno(cantidad);		
 	}
 	
 }

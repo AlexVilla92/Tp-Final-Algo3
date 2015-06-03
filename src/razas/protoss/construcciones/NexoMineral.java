@@ -41,6 +41,12 @@ public class NexoMineral extends Protoss implements Construccion, Recolector {
 		int extraido = nodo.extraer();
 		this.mineralesRecolectados += extraido;
 		
+		this.notificarMineralesObtenidos(extraido);
+		
 		return extraido;
+	}
+	
+	private void notificarMineralesObtenidos(int cantidad) {
+		this.getJugador().obtenerMinerales(cantidad);		
 	}
 }

@@ -24,8 +24,8 @@ public class UnidadBuilder {
 	}
 	
 	private boolean jugadorPuedeCrearUnidad(Raza unidad) {
-		if (destinatario.getCantidadGasVespeno() >= ((Unidad)unidad).getCostoGasVespeno() &&
-		(destinatario.getCantidadMinerales() >= ((Unidad)unidad).getCostoMinerales())) {		
+		if (destinatario.getCantidadGasVespeno() >= unidad.getCostoGasVespeno() &&
+		(destinatario.getCantidadMinerales() >= unidad.getCostoMinerales())) {		
 			return true;
 		} else {
 			return false;
@@ -33,8 +33,8 @@ public class UnidadBuilder {
 	}
 	
 	private void removerRecursosDeJugador(Raza unidad) {
-		destinatario.removerGasVespeno(((Unidad)unidad).getCostoGasVespeno());
-		destinatario.removerMinerales(((Unidad)unidad).getCostoMinerales());
+		destinatario.removerGasVespeno(unidad.getCostoGasVespeno());
+		destinatario.removerMinerales(unidad.getCostoMinerales());
 	}
 
 }
