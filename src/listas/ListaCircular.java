@@ -3,12 +3,14 @@ package listas;
 /**
 * Lista Circular
 * @author https://github.com/derrickcodes/SLinkedCircularList
+* Modificada para tomar objetos genericos
 */
-public class ListaCircular
+public class ListaCircular<T>
 {
 	
 	private Node firstNode;			
-	private Node lastNode;			
+	private Node lastNode;
+	private Node currentNode;
 	private int length;				
 	
 	public ListaCircular()
@@ -16,7 +18,7 @@ public class ListaCircular
 		clear();
 	} 
 
-	public boolean add(Object newEntry)
+	public boolean add(T newEntry)
 	{
 		Node newNode = new Node(newEntry);
 		
@@ -39,7 +41,7 @@ public class ListaCircular
 		return true;
 	} 
 	
-	public boolean add(int newPosition, Object newEntry)
+	public boolean add(int newPosition, T newEntry)
 	{
 		boolean isSuccessful = true;
 		
@@ -52,7 +54,8 @@ public class ListaCircular
 				firstNode = newNode;
 				lastNode = newNode;
 				firstNode.next = newNode;	
-				lastNode.next = newNode;	
+				lastNode.next = newNode;
+				currentNode = newNode;
 			}
 			else if (newPosition == 1)
 			{
@@ -84,9 +87,9 @@ public class ListaCircular
 		return isSuccessful;
 	} 
 
-	public Object remove(int givenPosition)
+	public T remove(int givenPosition)
 	{
-		Object result = null; 				
+		T result = null; 				
 		
 		if (!isEmpty() && (givenPosition >= 1) && (givenPosition <= length))
 		{
@@ -124,10 +127,11 @@ public class ListaCircular
 	{
 		firstNode = null;
 		lastNode = null;
+		currentNode = null;
 		length = 0;
 	} 
 
-	public boolean replace(int givenPosition, Object newEntry)
+	public boolean replace(int givenPosition, T newEntry)
 	{
 		boolean isSuccessful = true;
 		
@@ -143,16 +147,16 @@ public class ListaCircular
 		return isSuccessful;
 	} 
 
-	public Object getEntry(int givenPosition)
+	public T getEntry(int givenPosition)
 	{
-		Object result = null;	
+		T result = null;	
 		
 		if (!isEmpty() && (givenPosition >= 1) && (givenPosition <= length))
 			result = getNodeAt(givenPosition).data;
 		
 		return result;
 	} 
-	public boolean contains(Object anEntry)
+	public boolean contains(T anEntry)
 	{
 		boolean found = false;
 		Node currentNode = firstNode;
@@ -183,18 +187,15 @@ public class ListaCircular
 	public boolean isFull() {
 		return false;
 	}
-
 	
-	public void display()
-	{
-		Node currentNode = firstNode;
-		
-		do
-		{
-			System.out.println(currentNode.data);
-			currentNode = currentNode.next;
-		} while (currentNode != firstNode);
-	} 
+	public void reset() {
+		currentNode = this.getNodeAt(1);
+	}
+	
+	public T next() {
+		currentNode = currentNode.next;
+		return currentNode.data;
+	}
 	
 	private Node getNodeAt(int givenPosition)
 	{
@@ -209,16 +210,16 @@ public class ListaCircular
 
 	private class Node		
 	{
-		private Object data;		
+		private T data;		
 		private Node next;			
 		
-		private Node(Object dataPortion)
+		private Node(T dataPortion)
 		{
 			data = dataPortion;
 			next = null;
 		} 
 		
-		private Node(Object dataPortion, Node nextNode)
+		private Node(T dataPortion, Node nextNode)
 		{
 			data = dataPortion;
 			next = nextNode;

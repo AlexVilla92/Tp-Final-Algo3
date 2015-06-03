@@ -1,3 +1,5 @@
+package listaTests;
+
 import static org.junit.Assert.*;
 import listas.ListaCircular;
 
@@ -12,7 +14,7 @@ public class listaTests {
 
 	@Test
 	public void testListaCircular() {
-		ListaCircular list = new ListaCircular();
+		ListaCircular<String> list = new ListaCircular<String>();
 		assertEquals(null, list.getEntry(1));
 		assertEquals(0, list.getLength());
 	}
@@ -20,7 +22,7 @@ public class listaTests {
 	@Test 
 	public void testAddObject() {
 		boolean ans;	// defaults to false
-		ListaCircular list = new ListaCircular();
+		ListaCircular<String> list = new ListaCircular<String>();
 		list.add("apple");
 		list.add("pear");
 		ans = list.add("melon");
@@ -33,7 +35,7 @@ public class listaTests {
 	@Test
 	public void testAddIntObject() {
 		boolean ans;	// defaults to false
-		ListaCircular list = new ListaCircular();
+		ListaCircular<String> list = new ListaCircular<String>();
 		list.add("apple");
 		list.add("pear");
 		list.add("melon"); 
@@ -47,7 +49,7 @@ public class listaTests {
 
 	@Test
 	public void testRemove() {
-		ListaCircular list = new ListaCircular();
+		ListaCircular<String> list = new ListaCircular<String>();
 		list.add("apple");
 		list.add("pear");
 		list.add("banana");
@@ -60,14 +62,14 @@ public class listaTests {
 
 	@Test
 	public void testClear() {
-		ListaCircular list = new ListaCircular();
+		ListaCircular<String> list = new ListaCircular<String>();
 		assertEquals(0, list.getLength());
 		assertEquals(null, list.getEntry(1));
 	}
 
 	@Test
 	public void testReplace() {
-		ListaCircular list = new ListaCircular();
+		ListaCircular<String> list = new ListaCircular<String>();
 		// fill with values
 		list.add("apple");
 		list.add("pear");
@@ -83,7 +85,7 @@ public class listaTests {
 
 	@Test
 	public void testGetEntry() {
-		ListaCircular list = new ListaCircular();
+		ListaCircular<String> list = new ListaCircular<String>();
 		// fill with values
 		list.add("apple");
 		list.add("pear");
@@ -97,7 +99,7 @@ public class listaTests {
 
 	@Test
 	public void testContains() {
-		ListaCircular list = new ListaCircular();
+		ListaCircular<String> list = new ListaCircular<String>();
 		// fill with values
 		list.add("apple");
 		list.add("pear");
@@ -108,7 +110,7 @@ public class listaTests {
 
 	@Test
 	public void testGetLength() {
-		ListaCircular list = new ListaCircular();
+		ListaCircular<String> list = new ListaCircular<String>();
 		// fill with values
 		list.add("apple");
 		list.add("pear");
@@ -121,13 +123,13 @@ public class listaTests {
 
 	@Test
 	public void testIsEmpty() {
-		ListaCircular list = new ListaCircular();
+		ListaCircular<String> list = new ListaCircular<String>();
 		assertEquals(0, list.getLength());
 	}
 
 	@Test
 	public void testIsFull() {
-		ListaCircular list = new ListaCircular();
+		ListaCircular<String> list = new ListaCircular<String>();
 		boolean ans = false;
 		assertEquals(ans, list.isFull());;
 	}

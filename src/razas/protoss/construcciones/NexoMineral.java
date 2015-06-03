@@ -16,7 +16,6 @@ public class NexoMineral extends Protoss implements Construccion, Recolector {
 		this.vida = 250;
 		this.escudo = 250;
 		this.mineralesRecolectados = 0;
-		
 	}
 	
 	@Override
@@ -38,8 +37,10 @@ public class NexoMineral extends Protoss implements Construccion, Recolector {
 	public int totalRecolectado() { return this.mineralesRecolectados; }
 
 	@Override
-	public void recolectar(Recurso nodo) throws RecursoAgotado {
-		this.mineralesRecolectados += nodo.extraer();		
+	public int recolectar(Recurso nodo) throws RecursoAgotado {
+		int extraido = nodo.extraer();
+		this.mineralesRecolectados += extraido;
+		
+		return extraido;
 	}
-
 }

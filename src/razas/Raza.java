@@ -1,5 +1,6 @@
 package razas;
 
+import jugador.Jugador;
 import razas.excepciones.YaFueDestruido;
 import razas.interfaces.Atacable;
 import razas.interfaces.Unidad;
@@ -7,9 +8,18 @@ import razas.interfaces.Unidad;
 public abstract class Raza implements Atacable {
 
 	protected int vida;
+	protected Jugador deJugador;
 
 	public Raza() {
 		super();
+	}
+	
+	public void asignarJugador(Jugador j) {
+		this.deJugador = j;
+	}
+	
+	public Jugador getJugador() {
+		return this.deJugador;
 	}
 
 	public int getVida() { return this.vida; }

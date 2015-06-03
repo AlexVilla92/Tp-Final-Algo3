@@ -32,8 +32,11 @@ public class CentroDeMineral extends Terran implements Construccion, Recolector 
 	public int totalRecolectado() { return this.mineralesRecolectados; }
 	
 	@Override
-	public void recolectar(Recurso nodo) throws RecursoAgotado {
-		this.mineralesRecolectados += nodo.extraer();
+	public int recolectar(Recurso nodo) throws RecursoAgotado {
+		int extraido = nodo.extraer();
+		this.mineralesRecolectados += extraido;
+		
+		return extraido;
 	}
 	
 }

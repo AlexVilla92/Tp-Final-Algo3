@@ -37,8 +37,11 @@ public class Asimilador extends Protoss implements Construccion, Recolector {
 	public int totalRecolectado() { return this.gasVespenoRecolectado; }
 	
 	@Override
-	public void recolectar(Recurso nodo) throws RecursoAgotado {
-		this.gasVespenoRecolectado += nodo.extraer();
+	public int recolectar(Recurso nodo) throws RecursoAgotado {
+		int extraido = nodo.extraer();
+		this.gasVespenoRecolectado += extraido;
+		
+		return extraido;
 	}
 	
 }
