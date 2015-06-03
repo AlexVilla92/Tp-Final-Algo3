@@ -15,7 +15,8 @@ public class MaterialTierra extends Material {
 	   }
 
 	@Override
-	public boolean esTranspasable(Unidad unidad) {
+	public boolean esTranspasablePor(Unidad unidad) {
+		//Todo puede estar sobre tierra (a menos que hagamos botes...)
 		return true;
 	}
 	

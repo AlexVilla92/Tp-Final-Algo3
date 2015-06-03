@@ -34,8 +34,8 @@ public class Celda {
 		return (this.unidad == null);
 	}
 	
-	public boolean esTranspasable(Unidad unidad) {
-		return this.base.esTranspasable(unidad);
+	public boolean puedeExistirUnidad(Unidad unidad) {
+		return this.base.esTranspasablePor(unidad);
 	}
 	
 	
