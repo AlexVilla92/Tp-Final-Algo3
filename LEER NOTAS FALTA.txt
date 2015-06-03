@@ -21,5 +21,8 @@ retirar entonces cierta cantidad de minerales del nexo mineral. Faltaria impleme
 
 - Verificacion de edificios con requisitos para su construccion, nuevamente la entidad verificadora o activador o lo que sea.
 
+- el escudo recupera para todos 50 por turno, esto habria que ponerlo como supuesto o modificarlo segun la construccion/unidad si lo queremos cambiar, yo lo dejaria asi
+y lo aclararia como supuesto
+
 - El metodo de ataque de una unidad a otra o a una construccion, no diferencia entre aliados o enemigos.
 Es decir pueden atacarse aliados, creo que lo mejor seria que no pase eso, asi que habria que modificar el metodo o validarlo de alguna manera
