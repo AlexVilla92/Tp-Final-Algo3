@@ -34,6 +34,22 @@ public class jugadorTest {
 		centroMineral.recolectar(mineral); //Consigue 10 minerales
 		
 		assertEquals(jugador.getCantidadMinerales(), 10);
+		
+		//primero tengo que incializar un mapa
+		
+		//construyo un centro de mineral en la posicion donde se que esta el mineral
+		
+		//paso turnos, mientras verifico que no recolecté
+		
+		//paso turnos hasta completar construccion
+		
+		//verifico que empiezo a sumar pasando turnos.
+		
+		
+		
+		
+		
+		
 	}
 	
 
