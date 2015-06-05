@@ -39,16 +39,11 @@ public class jugadorTest {
 		
 		//construyo un centro de mineral en la posicion donde se que esta el mineral
 		
-		//paso turnos, mientras verifico que no recolecté
+		//paso turnos, mientras verifico que no recolecta
 		
 		//paso turnos hasta completar construccion
 		
 		//verifico que empiezo a sumar pasando turnos.
-		
-		
-		
-		
-		
 		
 	}
 	
